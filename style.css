@@ -50,12 +50,13 @@ h1 {
     background-color: #fff;
     width: 100%;
     bottom: 0;
-    overflow: hidden; /* Propriedade overflow para ocultar qualquer conteúdo que ultrapasse a div */
+    overflow: hidden;
     position: fixed;
 }
 
-#wave:hover {
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+#wave:hover,#wave:focus ::before {
+    animation: pulsando 1.75s cubic-bezier(0.33, 1, 0.68, 1) infinite alternate;
+
 }
 
 #wave:active ~ #moldura{
@@ -93,4 +94,13 @@ h1 {
         background-position: 100% 50%;
     }
 
+}
+
+@keyframes pulsando {
+
+    100%{
+        text-shadow: 2px 2px 10px #00000099;
+        transform: scale(1.15 , 1.15);
+    }
+    
 }

@@ -54,6 +54,10 @@ h1 {
     position: fixed;
 }
 
+#wave:hover {
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
 #wave:active ~ #moldura{
     animation: wave_up 3s cubic-bezier(.65,.64,.37,.37);
     animation-fill-mode: forwards;

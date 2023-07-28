@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&display=swap');
+
+body {
+    margin: 0;
+    background: linear-gradient(#59d3fc, #554dde,#59d3fc, #554dde);
+    background-size: 300% 300%;
+    font-family: 'Borel', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 8vw;
+
+    animation: gradient 10s ease infinite alternate;
+}
+
+h1 {
+    color: #ffffff;
+    cursor: pointer;
+    margin: 0;
+}
+
+#moldura{
+    width: 100%;
+    bottom: 0;
+    overflow: hidden; /* Propriedade overflow para ocultar qualquer conteúdo que ultrapasse a div */
+    position: fixed;
+}
+
+#container{
+    display:flex;
+    transform: scale(2) translatex(-25%);
+}
+
+#container2{
+    display:flex;
+    transform: scale(2) translatex(-25%);
+}
+
+#svg1 {
+    animation: wave 5s infinite cubic-bezier(.65,.64,.37,.37);
+}
+
+#svg2 {
+    animation: wave 3s infinite cubic-bezier(.65,.64,.37,.37);
+}
+
+#back_water{
+    height: 10px;
+    background-color: #fff;
+    width: 100%;
+    bottom: 0;
+    overflow: hidden; /* Propriedade overflow para ocultar qualquer conteúdo que ultrapasse a div */
+    position: fixed;
+}
+
+#wave:active ~ #moldura{
+    animation: wave_up 3s cubic-bezier(.65,.64,.37,.37);
+    animation-fill-mode: forwards;
+}
+
+#wave:active ~ #back_water{
+    animation: back_water 3s cubic-bezier(.65,.64,.37,.37);
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes wave {
+    100%{
+        transform: translate(100%);
+    }
+}
+
+@keyframes wave_up {
+    100%{
+        transform: translatey(-90vh);
+    }
+}
+
+@keyframes back_water {
+    100%{
+        transform: scaleY(143);
+    }
+}
+
+@keyframes gradient {
+
+    100%{
+        background-position: 100% 50%;
+    }
+
+}
